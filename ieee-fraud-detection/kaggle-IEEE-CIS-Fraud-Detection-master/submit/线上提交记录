@@ -1,0 +1,18 @@
+
+1.增加D_slop和D_delta
+nohup python -u lgb2_submit_D.py -1 > lgb2_submit_D.log 2>&1 &
+local2 done:
+Total training time is 1:07:11.607548
+AUCs: [0.9281673428202456, 0.9448515602092062, 0.9405911322849775, 0.9548342265657703]
+Mean AUC: 0.94211106547005
+线上提交: 0.9457
+
+2.参数优化
+local5, done:
+nohup python -u lgb2_para_opt_submit.py -1 > lgb2_para_opt_submit.log 2>&1 &
+
+Total training time is 0:18:52.468184
+AUCs: [0.9143824068425187, 0.9353440106621487, 0.9308520458781104, 0.9478898060464241]
+Mean AUC: 0.9321170673573005
+线上提交: 0.9402
+实验结果分析: 参数优化没有达到想要的效果

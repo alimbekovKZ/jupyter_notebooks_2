@@ -1,0 +1,46 @@
+实验结果分析方法: 查看四折的结果是否都有提升,查看maen acu,查看test1, test2的auc
+
+1.获取base结果
+local1, cpu2 run:
+base: None
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+Total training time is 0:25:59.346228
+AUCs: [0.9197422073954087, 0.9404403187347454, 0.9531079927213885, 0.9519184410180594]
+Mean AUC: 0.9413022399674005
+------------------------------
+test1 auc:  0.9080785550718606
+test2 auc: 0.9113424167139045
+实验结果分析: None
+
+
+2.card3特征onehot编码
+local2, cpu3 done:
+base: test1 auc:  0.9080785550718606, test2 auc: 0.9113424167139045
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+Training has finished.
+Total training time is 0:27:54.949439
+AUCs: [0.9200992490338095, 0.9404890882835136, 0.9531687544172154, 0.9523492942367]
+Mean AUC: 0.9415265964928097
+------------------------------
+test1 auc:  0.9087788275394995
+test2 auc: 0.9109158691443733
+实验结果分析: 四折均有提升, mean auc提升, test1 提升7个点,test2下降4个点
+
+
+
+3.增加D10/当日最大值
+local1, cpu2 done:
+base: test1 auc:  0.9080785550718606, test2 auc: 0.9113424167139045
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+
+Total training time is 0:28:04.523583
+AUCs: [0.9200371617991412, 0.9398790639573149, 0.9527518252493626, 0.9527141789300625]
+Mean AUC: 0.9413455574839703
+------------------------------
+test1 auc:  0.9089329121318903
+test2 auc: 0.9109703430335961
+实验结果分析:只有第一折提升,test1 提升9个点,test2下降4个点
+
+
+
+tail -f add_feature.log

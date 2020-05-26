@@ -1,0 +1,252 @@
+不删除特征, 去掉第五折:
+Total training time is 0:50:38.580905
+AUCs: [0.9169393985027141, 0.9351006605945301, 0.9528792888962798, 0.949460276704179]
+Mean AUC: 0.9385949061744256
+------------------------------
+test1 auc:  0.9057955073601175
+test2 auc: 0.9070833835348824
+实验结果分析: 去掉第五折的效果比使用全部五折的效果要好,test1提升14,test2提升9
+
+test1和test2同时增加的特征, 删除或增加
+test2提高的量比test降低的量大, 删除或增加
+
+
+删除D1-D15:
+local 3, done:
+nohup python -u del_feature.py -1 0 > del_feature.log 2>&1 &
+Total training time is 0:30:04.072408
+AUCs: [0.917060263076479, 0.9343770720640229, 0.9521836074538611, 0.9484340926568431]
+Mean AUC: 0.9380137588128015
+------------------------------
+test1 auc:  0.9053661531335239
+test2 auc: 0.9071125853532404
+实验结果分析: 删除之后test1下降4个点,test2提高1个点,随机因素比较大...
+
+
+删除"M*_count_full"
+local 2, done:
+nohup python -u del_feature.py -1 0 > del_feature.log 2>&1 &
+Total training time is 0:59:56.122932
+AUCs: [0.9162777503780114, 0.9357271294571907, 0.9530573846247327, 0.949787743597217]
+Mean AUC: 0.9387125020142879
+------------------------------
+test1 auc:  0.9052314695503172
+test2 auc: 0.907141068803422
+实验结果分析: 删除之后test1降低5个点,test2提高1个点;不删
+
+删除和card_str相关的特征:
+local5 done:
+nohup python -u del_feature.py -1 0 > del_feature.log 2>&1 &
+Total training time is 0:26:35.179555
+AUCs: [0.9165927563426568, 0.9356567520478474, 0.9529700396869814, 0.9497215235237011]
+Mean AUC: 0.9387352679002967
+------------------------------
+test1 auc:  0.905857583882158
+test2 auc: 0.9077567908811621
+实验结果分析: 删除之后test1提升1个点,test2提高7个点; 把这部分特征删掉
+
+删除shift_100_cnt:
+local5 done:
+nohup python -u del_feature.py -1 0 > del_feature.log 2>&1 &
+Total training time is 0:29:54.875283
+AUCs: [0.915722542088632, 0.9340769918155528, 0.9522404516192993, 0.9491112465372289]
+Mean AUC: 0.9377878080151782
+------------------------------
+test1 auc:  0.9055729658792255
+test2 auc: 0.9074243216793929
+实验结果分析: 删除之后test1降低2个点,test2提高3个点,把这部分特征删掉
+
+
+增加特征,志锋的50个特征
+local2, done:
+nohup python -u add_feature.py -1 1 > add_feature.log 2>&1 &
+Total training time is 0:54:18.296887
+AUCs: [0.9182331512648755, 0.9355833084628401, 0.9526952209327242, 0.9494401807949852]
+Mean AUC: 0.9389879653638562
+------------------------------
+test1 auc:  0.9066202179342023
+test2 auc: 0.9076443247197925
+实验结果分析: 增加之后test1提高8个点,test2提高1个点,增加该特征
+
+
+增加特征,Hour_count_full特征
+local3, run:
+nohup python -u add_feature.py -1 1 > add_feature.log 2>&1 &
+Total training time is 0:27:30.369639
+AUCs: [0.9168075258569042, 0.9347698462739565, 0.9529136592292219, 0.9500889446617915]
+Mean AUC: 0.9386449940054685
+------------------------------
+test1 auc:  0.9061780778221262
+test2 auc: 0.9075559856983434
+实验结果分析: 增加之后test1降低5个点,test2降低1个点,不增加该特征
+
+
+增加特征, D10和TransactionDT的关系
+nohup python -u add_feature.py -1 1 > add_feature.log 2>&1 &
+local3 done:
+Total training time is 0:25:32.618150
+AUCs: [0.916843091218672, 0.9355654176171028, 0.953596556730637, 0.9498196413112193]
+Mean AUC: 0.9389561767194078
+------------------------------
+test1 auc:  0.9070889946090179
+test2 auc: 0.9082865109137566
+实验结果分析: 增加之后test1提高4个点,test2提高6个点,增加该特征
+
+
+增加特征, DT
+nohup python -u add_feature.py -1 1 > add_feature.log 2>&1 &
+local3 done:
+Total training time is 0:25:26.122152
+AUCs: [0.9195220993399171, 0.9397062155358059, 0.950584967236654, 0.950496934940626]
+Mean AUC: 0.9400775542632508
+------------------------------
+test1 auc:  0.9072946084159499
+test2 auc: 0.907713717667147
+实验结果分析: 增加之后test1提高2个点,test2降低5个点,DT不能直接用
+
+删除DT特征,增加D1-D5的角度特征
+local3 done:
+Total training time is 0:27:43.496787
+AUCs: [0.9183270241741106, 0.937842110899958, 0.9533913261080216, 0.9514091955861894]
+Mean AUC: 0.9402424141920699
+------------------------------
+test1 auc:  0.9078200454278738
+test2 auc: 0.909537246649041
+实验结果分析: D1_slop - D5_slop特征有效
+
+
+保留DT特征,增加D10_delta特征:
+nohup python -u add_feature.py -1 1 > add_feature.log 2>&1 &
+local2 done:
+Total training time is 0:27:06.646978
+AUCs: [0.9204893682737583, 0.9387942741483568, 0.9518110982836421, 0.9509581765838441]
+Mean AUC: 0.9405132293224002
+------------------------------
+test1 auc:  0.9078516621978111
+test2 auc: 0.9088840184573507
+实验结果分析: D10_delta特征有效
+
+
+保留DT特征,增加D1-D8的delta特征:
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+local2 done:
+Total training time is 0:25:39.168876
+AUCs: [0.9214120817423768, 0.9410455557772427, 0.9527808229692002, 0.9526738403752025]
+Mean AUC: 0.9419780752160055
+------------------------------
+test1 auc:  0.9098886088626258
+test2 auc: 0.9111684616815487
+实验结果分析: D1-D8的delta特征有效
+
+
+增加剩余的D系列特征
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+local2 done:
+Total training time is 0:28:31.895342
+AUCs: [0.9201963357448736, 0.940414068221396, 0.9525779748446579, 0.952460352783546]
+Mean AUC: 0.9414121828986184
+------------------------------
+test1 auc:  0.9092219821382269
+test2 auc: 0.9113189213124299
+实验结果分析: 剩余的D系列特征 test1和test2变化很小
+
+
+准备add_feature的原始数据
+local3 done:
+
+
+删除TransactionDT的实验,和楼上的楼上对比
+local3 done:
+Total training time is 0:29:06.701988
+AUCs: [0.9193831798196649, 0.9398473174687186, 0.9524379111408169, 0.9519287754581489]
+Mean AUC: 0.9408992959718373
+------------------------------
+test1 auc:  0.9093046921449708
+test2 auc: 0.9113783016866946
+实验结果分析: 删除TransactionDT test1和test2变化很小
+
+
+线下平移D10 90的距离
+local3 done:
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+Total training time is 0:27:23.509578
+AUCs: [0.9204108063008111, 0.939438040869952, 0.9527022085277441, 0.9523018075194254]
+Mean AUC: 0.9412132158044831
+------------------------------
+test1 auc:  0.9088
+test2 auc: 0.9117
+实验结果分析: test1降低10个点,test2降低6个点,平移暂时无效
+
+增加D10的01特征:
+local2 done:
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+Total training time is 0:25:44.534128
+AUCs: [0.9190252946917475, 0.9393652047348404, 0.9525140071698801, 0.952668103677898]
+Mean AUC: 0.9408931525685915
+------------------------------
+test1 auc:  0.909048597146898
+test2 auc: 0.9115259618094353
+实验结果分析: 没有明显提升
+
+
+修改D10的slop特征
+local1, cpu2 done:
+base: test1 auc:  0.9098886088626258 test2 auc: 0.9111684616815487
+nohup python -u add_feature.py -1 0 > add_feature.log 2>&1 &
+Total training time is 0:27:59.829331
+AUCs: [0.9198029493176832, 0.9406284257191105, 0.9531836730125329, 0.9522789026549128]
+Mean AUC: 0.9414734876760599
+------------------------------
+test1 auc:  0.9086360448314562
+test2 auc: 0.910843902635427
+实验结果分析: test1降低12个点,test2降低3个点
+
+
+增加剩余的delta特征:
+local2, cpu3 run
+base: test1 auc:  0.9098886088626258 test2 auc: 0.9111684616815487
+Total training time is 0:28:53.156893
+AUCs: [0.9198741761349613, 0.9401853488725768, 0.9523983041090895, 0.9518010099158638]
+Mean AUC: 0.9410647097581228
+------------------------------
+test1 auc:  0.9089784550367694
+test2 auc: 0.9116157066642341
+实验结果分析: test1降低9个点,test2提升5个点, 剩余的delta特征
+
+删除大部分特征的实验:
+
+
+
+
+命令行
+第一个参数表示使用的样本数, -1表示全部数据集, 3000表示使用3000条样本
+第二个参数表示是否重新特征工程, 0表示直接读取数据,不重新进行特征工程, 1表示重新特征工程
+
+nohup python -u del_feature.py -1 0 > del_feature.log 2>&1 &
+
+nohup python -u add_feature.py 5000 1 > add_feature.log 2>&1 &
+
+
+
+
+删除特征:
+card_str相关的特征
+shift_100_cnt
+
+增加特征:
+志锋的50个特征
+
+
+
+label_encoding_features:
+['ProductCD', 'card4', 'card6', 'P_emaildomain', 'R_emaildomain',
+'M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9',
+'id_12', 'id_15', 'id_16', 'id_23', 'id_27', 'id_28', 'id_29', 'id_30', 'id_31',
+'id_33', 'id_34', 'id_35', 'id_36', 'id_37', 'id_38', 'DeviceType', 'DeviceInfo',
+'card1_sub_-1', 'card1_sub_-2', 'card1_sub_-3', 'card1_sub_-4', 'card1_sub_-5',
+'card1_first', 'P_email_suffix', 'P_emailCorp', 'R_email_suffix', 'R_emailCorp',
+'System', 'SystemCorp', 'LastestBrowser', 'MSBrowser', 'AppleBrowser', 'GoogleBrowser',
+'BrowserType', 'id_02__id_20', 'id_13__id_17', 'id_02__D8', 'D11__DeviceInfo',
+'DeviceInfo__P_emaildomain', 'card2__dist1', 'card1__card5', 'card2__id_20',
+'card5__P_emaildomain', 'addr1__card1', 'id_30_DeviceTpye', 'id_31_DeviceTpye',
+'id_33_DeviceTpye', 'DeviceInfo_DeviceTpye', 'DeviceCorp']

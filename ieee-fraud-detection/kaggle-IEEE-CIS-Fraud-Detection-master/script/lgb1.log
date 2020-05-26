@@ -1,0 +1,261 @@
+nohup: ignoring input
+{'text/html': '        <script type="text/javascript">\n        window.PlotlyConfig = {MathJaxConfig: \'local\'};\n        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}\n        if (typeof require !== \'undefined\') {\n        require.undef("plotly");\n        requirejs.config({\n            paths: {\n                \'plotly\': [\'https://cdn.plot.ly/plotly-latest.min\']\n            }\n        });\n        require([\'plotly\'], function(Plotly) {\n            window._Plotly = Plotly;\n        });\n        }\n        </script>\n        '}
+
+User settings:
+
+   KMP_AFFINITY=granularity=fine,verbose,compact,1,0
+   KMP_BLOCKTIME=0
+   KMP_DUPLICATE_LIB_OK=True
+   KMP_SETTINGS=1
+   OMP_NUM_THREADS=8
+
+Effective settings:
+
+   KMP_ABORT_DELAY=0
+   KMP_ADAPTIVE_LOCK_PROPS='1,1024'
+   KMP_ALIGN_ALLOC=64
+   KMP_ALL_THREADPRIVATE=128
+   KMP_ATOMIC_MODE=2
+   KMP_BLOCKTIME=0
+   KMP_CPUINFO_FILE: value is not defined
+   KMP_DETERMINISTIC_REDUCTION=false
+   KMP_DEVICE_THREAD_LIMIT=2147483647
+   KMP_DISP_HAND_THREAD=false
+   KMP_DISP_NUM_BUFFERS=7
+   KMP_DUPLICATE_LIB_OK=true
+   KMP_FORCE_REDUCTION: value is not defined
+   KMP_FOREIGN_THREADS_THREADPRIVATE=true
+   KMP_FORKJOIN_BARRIER='2,2'
+   KMP_FORKJOIN_BARRIER_PATTERN='hyper,hyper'
+   KMP_FORKJOIN_FRAMES=true
+   KMP_FORKJOIN_FRAMES_MODE=3
+   KMP_GTID_MODE=3
+   KMP_HANDLE_SIGNALS=false
+   KMP_HOT_TEAMS_MAX_LEVEL=1
+   KMP_HOT_TEAMS_MODE=0
+   KMP_INIT_AT_FORK=true
+   KMP_ITT_PREPARE_DELAY=0
+   KMP_LIBRARY=throughput
+   KMP_LOCK_KIND=queuing
+   KMP_MALLOC_POOL_INCR=1M
+   KMP_MWAIT_HINTS=0
+   KMP_NUM_LOCKS_IN_BLOCK=1
+   KMP_PLAIN_BARRIER='2,2'
+   KMP_PLAIN_BARRIER_PATTERN='hyper,hyper'
+   KMP_REDUCTION_BARRIER='1,1'
+   KMP_REDUCTION_BARRIER_PATTERN='hyper,hyper'
+   KMP_SCHEDULE='static,balanced;guided,iterative'
+   KMP_SETTINGS=true
+   KMP_SPIN_BACKOFF_PARAMS='4096,100'
+   KMP_STACKOFFSET=64
+   KMP_STACKPAD=0
+   KMP_STACKSIZE=8M
+   KMP_STORAGE_MAP=false
+   KMP_TASKING=2
+   KMP_TASKLOOP_MIN_TASKS=0
+   KMP_TASK_STEALING_CONSTRAINT=1
+   KMP_TEAMS_THREAD_LIMIT=8
+   KMP_TOPOLOGY_METHOD=all
+   KMP_USER_LEVEL_MWAIT=false
+   KMP_USE_YIELD=1
+   KMP_VERSION=false
+   KMP_WARNINGS=true
+   OMP_AFFINITY_FORMAT='OMP: pid %P tid %i thread %n bound to OS proc set {%A}'
+   OMP_ALLOCATOR=omp_default_mem_alloc
+   OMP_CANCELLATION=false
+   OMP_DEBUG=disabled
+   OMP_DEFAULT_DEVICE=0
+   OMP_DISPLAY_AFFINITY=false
+   OMP_DISPLAY_ENV=false
+   OMP_DYNAMIC=false
+   OMP_MAX_ACTIVE_LEVELS=2147483647
+   OMP_MAX_TASK_PRIORITY=0
+   OMP_NESTED=false
+   OMP_NUM_THREADS='8'
+   OMP_PLACES: value is not defined
+   OMP_PROC_BIND='intel'
+   OMP_SCHEDULE='static'
+   OMP_STACKSIZE=8M
+   OMP_TARGET_OFFLOAD=DEFAULT
+   OMP_THREAD_LIMIT=2147483647
+   OMP_TOOL=enabled
+   OMP_TOOL_LIBRARIES: value is not defined
+   OMP_WAIT_POLICY=PASSIVE
+   KMP_AFFINITY='verbose,warnings,respect,granularity=fine,compact,1,0'
+
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-7
+OMP: Info #156: KMP_AFFINITY: 8 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 1 packages x 4 cores/pkg x 2 threads/core (4 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 4 maps to package 0 core 0 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 1 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 5 maps to package 0 core 1 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 6 maps to package 0 core 2 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 3 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 0 core 3 thread 1 
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6659 thread 0 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6705 thread 2 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6704 thread 1 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6706 thread 3 bound to OS proc set 3
+train.shape: (590540, 434)
+test.shape: (506691, 433)
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6751 thread 4 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6752 thread 5 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6750 thread 6 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6749 thread 7 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6748 thread 8 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6747 thread 9 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6745 thread 10 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 6746 thread 11 bound to OS proc set 3
+HBox(children=(IntProgress(value=0, max=509), HTML(value='')))
+
+HBox(children=(IntProgress(value=0, max=12), HTML(value='')))
+
+HBox(children=(IntProgress(value=0, max=2), HTML(value='')))
+
+Training on fold 1
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 7170 thread 12 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 7171 thread 13 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 7172 thread 14 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 6659 tid 7173 thread 15 bound to OS proc set 7
+Training until validation scores don't improve for 500 rounds.
+[100]	valid_0's auc: 0.883542
+[200]	valid_0's auc: 0.889479
+[300]	valid_0's auc: 0.895132
+[400]	valid_0's auc: 0.89889
+[500]	valid_0's auc: 0.901817
+[600]	valid_0's auc: 0.903449
+[700]	valid_0's auc: 0.904307
+[800]	valid_0's auc: 0.90468
+[900]	valid_0's auc: 0.905069
+[1000]	valid_0's auc: 0.905055
+[1100]	valid_0's auc: 0.905115
+[1200]	valid_0's auc: 0.90517
+[1300]	valid_0's auc: 0.905128
+[1400]	valid_0's auc: 0.905135
+[1500]	valid_0's auc: 0.90501
+[1600]	valid_0's auc: 0.904795
+Early stopping, best iteration is:
+[1120]	valid_0's auc: 0.905283
+Fold 1 finished in 0:04:29.380555
+Training on fold 2
+Training until validation scores don't improve for 500 rounds.
+[100]	valid_0's auc: 0.904065
+[200]	valid_0's auc: 0.910792
+[300]	valid_0's auc: 0.916681
+[400]	valid_0's auc: 0.92058
+[500]	valid_0's auc: 0.92275
+[600]	valid_0's auc: 0.923847
+[700]	valid_0's auc: 0.924672
+[800]	valid_0's auc: 0.924699
+[900]	valid_0's auc: 0.924948
+[1000]	valid_0's auc: 0.924747
+[1100]	valid_0's auc: 0.924358
+[1200]	valid_0's auc: 0.924303
+[1300]	valid_0's auc: 0.923903
+[1400]	valid_0's auc: 0.923765
+Early stopping, best iteration is:
+[903]	valid_0's auc: 0.924965
+Fold 2 finished in 0:06:48.833125
+Training on fold 3
+Training until validation scores don't improve for 500 rounds.
+[100]	valid_0's auc: 0.893427
+[200]	valid_0's auc: 0.900002
+[300]	valid_0's auc: 0.90606
+[400]	valid_0's auc: 0.911002
+[500]	valid_0's auc: 0.914464
+[600]	valid_0's auc: 0.91641
+[700]	valid_0's auc: 0.91731
+[800]	valid_0's auc: 0.917583
+[900]	valid_0's auc: 0.918079
+[1000]	valid_0's auc: 0.918175
+[1100]	valid_0's auc: 0.918173
+[1200]	valid_0's auc: 0.918147
+[1300]	valid_0's auc: 0.917932
+[1400]	valid_0's auc: 0.917833
+[1500]	valid_0's auc: 0.917561
+[1600]	valid_0's auc: 0.917416
+Early stopping, best iteration is:
+[1132]	valid_0's auc: 0.918237
+Fold 3 finished in 0:10:27.552469
+Training on fold 4
+Training until validation scores don't improve for 500 rounds.
+[100]	valid_0's auc: 0.906722
+[200]	valid_0's auc: 0.913131
+[300]	valid_0's auc: 0.919601
+[400]	valid_0's auc: 0.925573
+[500]	valid_0's auc: 0.931011
+[600]	valid_0's auc: 0.934524
+[700]	valid_0's auc: 0.936266
+[800]	valid_0's auc: 0.937308
+[900]	valid_0's auc: 0.93766
+[1000]	valid_0's auc: 0.938003
+[1100]	valid_0's auc: 0.938226
+[1200]	valid_0's auc: 0.938389
+[1300]	valid_0's auc: 0.93849
+[1400]	valid_0's auc: 0.938593
+[1500]	valid_0's auc: 0.938537
+[1600]	valid_0's auc: 0.938435
+[1700]	valid_0's auc: 0.938287
+[1800]	valid_0's auc: 0.938233
+Early stopping, best iteration is:
+[1370]	valid_0's auc: 0.938644
+Fold 4 finished in 0:14:22.364330
+Training on fold 5
+Training until validation scores don't improve for 500 rounds.
+[100]	valid_0's auc: 0.900854
+[200]	valid_0's auc: 0.909059
+[300]	valid_0's auc: 0.91657
+[400]	valid_0's auc: 0.923051
+[500]	valid_0's auc: 0.927984
+[600]	valid_0's auc: 0.931593
+[700]	valid_0's auc: 0.933452
+[800]	valid_0's auc: 0.934888
+[900]	valid_0's auc: 0.935826
+[1000]	valid_0's auc: 0.936276
+[1100]	valid_0's auc: 0.936473
+[1200]	valid_0's auc: 0.936781
+[1300]	valid_0's auc: 0.936791
+[1400]	valid_0's auc: 0.936875
+[1500]	valid_0's auc: 0.936919
+[1600]	valid_0's auc: 0.936944
+[1700]	valid_0's auc: 0.936916
+[1800]	valid_0's auc: 0.93695
+[1900]	valid_0's auc: 0.936926
+[2000]	valid_0's auc: 0.936911
+[2100]	valid_0's auc: 0.936868
+[2200]	valid_0's auc: 0.936801
+Early stopping, best iteration is:
+[1720]	valid_0's auc: 0.937023
+Fold 5 finished in 0:20:47.613352
+------------------------------
+Training has finished.
+Total training time is 0:56:55.745251
+Mean AUC: 0.9248304820171448
+------------------------------
+best_iteration:  1720
+[100]	training's auc: 0.939553
+[200]	training's auc: 0.953286
+[300]	training's auc: 0.964515
+[400]	training's auc: 0.97476
+[500]	training's auc: 0.98216
+[600]	training's auc: 0.987246
+[700]	training's auc: 0.990903
+[800]	training's auc: 0.993557
+[900]	training's auc: 0.995504
+[1000]	training's auc: 0.99686
+[1100]	training's auc: 0.997814
+[1200]	training's auc: 0.998453
+[1300]	training's auc: 0.998899
+[1400]	training's auc: 0.999219
+[1500]	training's auc: 0.99944
+[1600]	training's auc: 0.999602
+[1700]	training's auc: 0.999717
+[1800]	training's auc: 0.999796
+[1900]	training's auc: 0.999855
+[2000]	training's auc: 0.999897
