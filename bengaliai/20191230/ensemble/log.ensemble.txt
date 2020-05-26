@@ -1,0 +1,8 @@
+0  checkpoint_final
+0  dense121-fold0/submit/valid-swa-null
+1  dense121-fold1/submit/valid-swa-null
+avgerage_recall : 0.976088
+               grapheme_root  0.965263
+             vowel_diacritic  0.989499
+         consonant_diacritic  0.984328
+
